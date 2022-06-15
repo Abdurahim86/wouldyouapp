@@ -11,7 +11,7 @@ class Leaderboard extends Component {
                 leaderboard_arr_sort.map(l =>
                     <li key={l}>
                     <div className="card">
-                        <div className="card-body d-flex justify-content-between">
+                        <div className="card-body border border-danger d-flex justify-content-between">
                             <div className='align-middle w-40 border-end m-2'>
                                 <img 
                                     src={leaderboard_arr[l].avatarURL} 
@@ -34,13 +34,13 @@ class Leaderboard extends Component {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="align-middle text-end w-20">
+                            <div className="align-middle text-end w-20 ">
                                 <div className="card mt-4">
-                                    <div className="card-header text-center">
+                                    <div className="card-header bg-my text-center">
                                         Score
                                     </div> 
-                                    <div className="card-body">
-                                        <span className='text-center badge bg-primary rounded-pill fs-3'>
+                                    <div className="card-body border border-secondary">
+                                        <span className='text-center badge bg-danger rounded-pill fs-3'>
                                             {leaderboard_arr[l].score}
                                         </span>
                                     </div>   

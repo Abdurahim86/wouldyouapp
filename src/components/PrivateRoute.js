@@ -5,6 +5,7 @@ import { connect  } from 'react-redux';
 class PrivateRoute extends Component {
   render() {
     const {authedUser ,users } = this.props
+    console.log("private route",this.props)
     if(users[authedUser] === undefined){
         return(
             <Redirect to={{ pathname:'/login',
@@ -16,7 +17,10 @@ class PrivateRoute extends Component {
             <Route  
                 path={this.props.path}
                 exact={this.props.exact}
-                component={this.props.component}/>
+                component= {this.props.component.name === "Leaderboard"   
+                            ?   props => <this.props.component {...props} users={this.props.users} /> 
+                            :   props => <this.props.component {...props} />}
+                />
             ))
         }
     }

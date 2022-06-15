@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Pollanswer from './Pollanswer'
 import { Redirect } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class Pollstatus extends Component {
     calculatepercent(total, num){
@@ -111,6 +112,14 @@ function mapStateToProps({ questions , authedUser ,users }, props){
         authUser,
         authedUser
     }
+}
+Pollstatus.propTypes = {
+    users: PropTypes.object.isRequired,
+    question: PropTypes.object.isRequired,
+    authUser: PropTypes.object.isRequired,
+    id:PropTypes.string.isRequired,
+    authedUser:PropTypes.string.isRequired,
+
 }
 export default connect(mapStateToProps)(Pollstatus)
 

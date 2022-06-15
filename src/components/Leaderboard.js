@@ -1,11 +1,34 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 
-class Leaderboard extends Component {
-  render() {
-    const {leaderboard_arr , leaderboard_arr_sort} = this.props
+
+function Leaderboard (props) {
+    console.log(props)
+    const {users} = props
+    const leadearBoardData = (users) => {
+        let leaderboard_arr = {}
+        for(let key in users)
+        {
+            let total_answer = Object.keys(users[key].answers).length
+            let total_asked = users[key].questions.length
+            let score = total_asked + total_answer
+            leaderboard_arr[key] = {
+                ...users[key] , 
+                "totalAnswered" : total_answer , 
+                "totlaAsked": total_asked, 
+                "score": score
+            }
+        }
+        const leaderboard_arr_sort = Object
+                                    .keys(leaderboard_arr)
+                                    .sort((a,b) => leaderboard_arr[b].score- leaderboard_arr[a].score)
+        return{
+            leaderboard_arr,
+            leaderboard_arr_sort
+        }
+    }
+    const {leaderboard_arr , leaderboard_arr_sort} = leadearBoardData(users)
     return (
-    <div className='container'>
+        <div className='container'>
         <ul>
             {
                 leaderboard_arr_sort.map(l =>
@@ -54,30 +77,7 @@ class Leaderboard extends Component {
         </ul> 
     </div>
     )
-  }
-}
-function mapStateToProps({ users }){
-    let leaderboard_arr = {}
-    for(let key in users)
-    {
-        let total_answer = Object.keys(users[key].answers).length
-        let total_asked = users[key].questions.length
-        let score = total_asked + total_answer
-        leaderboard_arr[key] = {
-            ...users[key] , 
-            "totalAnswered" : total_answer , 
-            "totlaAsked": total_asked, 
-            "score": score
-        }
-    }
-    const leaderboard_arr_sort = Object
-                                .keys(leaderboard_arr)
-                                .sort((a,b) => leaderboard_arr[b].score- leaderboard_arr[a].score)
-    return{
-        leaderboard_arr,
-        leaderboard_arr_sort
-    }
 }
 
 
-export default connect(mapStateToProps)(Leaderboard)
+export default Leaderboard

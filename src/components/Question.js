@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
 
 
-class Question extends Component {
-    toPoll = (e, id) => {
+function Question (props) {
+    const toPoll = (e, id) => {
         e.preventDefault()
-        this.props.history.push(`/question/${id}`)
+        props.history.push(`/question/${id}`)
       }
-    render(){
-        const {user, question}= this.props
+        const {user, question}= props
         return(
             <div className="card m-0 mb-2">
                 <h4 className="card-header p-3">{user.name} asks:</h4>
@@ -44,7 +43,7 @@ class Question extends Component {
                             <button 
                                 type="button" 
                                 className="btn btn-primary" 
-                                onClick={(e) => this.toPoll(e, question.id)}
+                                onClick={(e) => toPoll(e, question.id)}
                             >
                                 View Poll
                             </button>
@@ -53,16 +52,11 @@ class Question extends Component {
                 </div>
             </div>
         )
-    }
-}
-function mapStateToProps({ questions , authedUser ,users }, {id }){
-    const question = questions ?  questions[id] : [];
-    const user = users ? users[question.author] : [];
-    return{
-        question,
-        user,
-    }
-
 }
 
-export default withRouter(connect(mapStateToProps)(Question))
+Question.propTypes = {
+    user: PropTypes.object.isRequired,
+    question: PropTypes.object.isRequired,
+}
+
+export default withRouter((Question))

@@ -34,7 +34,8 @@ render() {
                             <li className='p-3'>
                                 <NavLink  
                                     className={path === "/Leaderboard" ? "active" : null }  
-                                    to='/Leaderboard' >
+                                    to='/Leaderboard'
+                                    >
                                     Leader Board
                                 </NavLink>
                             </li>

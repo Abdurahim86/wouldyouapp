@@ -11,6 +11,7 @@ class Tabs extends Component {
     };
   }
   render() {
+    const {unansweredQ_id , answeredQ_id, questions, users } = this.props
     return (
       <div className="container">
         <div className="bloc-tabs">
@@ -43,11 +44,15 @@ class Tabs extends Component {
                         ? "content  active-content" 
                         : "content"}>
               <ul className='bg-special'>
-                {this.props.unansweredQ_id
+                {unansweredQ_id
                  .map(q => 
                 <li key={q}>
                   <div>
-                    <Question id={q}/>
+                    <Question
+                      id={q}
+                      question={questions[q]}
+                      user={users[questions[q].author]}
+                    />
                   </div>
                 </li>
               )}
@@ -59,11 +64,15 @@ class Tabs extends Component {
                        ? "content  active-content" 
                        : "content"}>
               <ul className='bg-special'>
-                {this.props.answeredQ_id
+                {answeredQ_id
                 .map(q => 
                 <li key={q}>
                   <div>
-                    <Question id={q} />
+                  <Question
+                      id={q}
+                      question={questions[q]}
+                      user={users[questions[q].author]}
+                    />
                   </div>
                 </li>)}
               </ul> 
@@ -87,7 +96,9 @@ function mapStateToProps ({ questions ,authedUser ,users }) {
   const answeredQ = questions_id.filter(q => loginusr_answeredQ.includes(q))
   return {
     answeredQ_id: answeredQ,
-    unansweredQ_id : unansweredQ
+    unansweredQ_id : unansweredQ,
+    questions,
+    users
   }
 }
 

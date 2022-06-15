@@ -23,9 +23,9 @@ This repo is a code-along with the final project in the [React Nanodegree progra
 * Depend on the user you selected, answer & unanswer questions will showed for this particular user. 
 * you can check out the poll or answer the poll by hit the button
 
-## new 
+## new Page
 
 * You can add new poll by press the new tab
 
-## LeaderBoard 
+## LeaderBoard Page
 * check out the score for all users

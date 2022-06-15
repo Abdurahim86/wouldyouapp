@@ -1,20 +1,31 @@
-# Chirper Project
+# Would You Rather APP
 
-This repo is a code-along with the first project in the [React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
-
-Most of the commits in this repository correspond to videos in the program.
+This repo is a code-along with the final project in the [React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
 
 ## Project Setup
 
-* clone the Project - `git@github.com:udacity/reactnd-chirper-app.git`
+* clone the Project - `git clone https://github.com/Abdurahim86/wouldyouapp.git
 * install the dependencies - `npm install`
 
-## Contributing
+## Start APP
 
-Because this is a code-along project and the commits correspond to specific videos in the program, we will not be accepting pull requests.
+* to start the app run - npm start
+* APP will redirect you to the default browser on your PC using port 3000
+* if your browser doesn't redirect you, open your broswer and request http://localhost:3000/
 
-If you feel like there's a major problem, please open an issue to discuss the problem and potential resolution.
+## Login Page 
 
-## License
+* You have to choose one user
+* after login, you will redirect to home page.
 
-MIT
+## home page
+
+* Depend on the user you selected, answer & unanswer questions will showed for this particular user. 
+* you can check out the poll or answer the poll by hit the button
+
+## new 
+
+* You can add new poll by press the new tab
+
+## LeaderBoard 
+* check out the score for all users

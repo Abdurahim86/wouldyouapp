@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://tylermcginnis.com/would-you-rather/sarah.jpg',
+    avatarURL: 'https://www.w3schools.com/w3images/avatar5.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://tylermcginnis.com/would-you-rather/tyler.jpg',
+    avatarURL: 'https://www.w3schools.com/w3images/avatar2.png',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'https://tylermcginnis.com/would-you-rather/dan.jpg',
+    avatarURL: 'https://www.w3schools.com/howto/img_avatar.png',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -157,7 +157,6 @@ export function _saveQuestion (question) {
         ...questions,
         [formattedQuestion.id]: formattedQuestion
       }
-      
       users = {
         ...users,
         [authedUser]: {
@@ -184,6 +183,7 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
           }
         }
       }
+      console.log("QID insdide function : " , qid, "Questions:", questions[qid] )
 
       questions = {
         ...questions,

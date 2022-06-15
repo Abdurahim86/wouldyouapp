@@ -13,10 +13,12 @@ body {
   flex-direction: column;
   position: relative;
   width: 50%;
-  background: #f1f1f1;
-  margin: 100px auto 0;
+  background: #d5eaf2;
+  margin: 0 auto 0;
   word-break: break-all;
-  border: 1px solid rgba(0, 0, 0, 0.274);
+  padding: 3px;
+  padding-top: 1px;
+  border-radius: 5px;
 }
 
 .bloc-tabs {
@@ -41,21 +43,24 @@ body {
 .active-tabs  {
   background: white;
   border-bottom: 1px solid transparent;
+  font-weight: 500;
 }
 
 .active-tabs::before {
   content: "";
   display: block;
   position: absolute;
-  top: -5px;
+  top: -4px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% + 2px);
-  height: 5px;
-  background: rgb(88, 147, 241);
+  height: 4px;
+  background: rgb(46 64 70 / 79%) !important;
 }
 
-
+.card{
+  border: none !important;
+}
 
 button {
   border: none;
@@ -66,7 +71,7 @@ button {
 }
 .content {
   background: white;
-  padding: 20px;
+
   width: 100%;
   height: 100%;
   display: none;
@@ -95,10 +100,74 @@ li{
   border-radius: 25px;
   margin: 10px;
 }
+.avatar2{
+  height: 50px;
+  border-radius: 50px;
+}
 .card-body {
     display: flex;
     flex-direction: row;
 }
 ul{
   padding-left: 0em;
+}
+.card-body2{
+  display: flex;
+    flex-direction: column;
+}
+.bg-light{
+ 
+  color: #222 !important;
+}
+
+a{
+  text-decoration: none;
+  color:  #222;
+  
+}
+.container-fluid{
+  border-bottom: solid 3px rgb(46 64 70 / 79%) !important;
+}
+.active{
+  color: rgb(46 64 70 / 79%) !important;
+  background-color:rgba(144, 202, 221, 0.79) !important;
+  font-weight: bolder;
+  padding: 20px 40px 20px;
+  border-radius: 20px 20px 0px 0px;
+}
+ul{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+
+.navbar {
+  padding: 0px !important;
+}
+.btn-primary
+{
+  background: rgb(46 64 70 / 79%) !important;
+  border: none;
+}
+.bg-primary{
+  background: #cfe3ea !important;
+  border: none !important;
+  border-radius: 5px;
+}
+.bg-special
+{
+  background: #cfe3ea !important;
+}
+.resultheader{
+  border: none !important; 
+}
+.resultcard{
+  border: solid #DC3545 1px !important; 
+  border-radius: 5px;
+}
+.bg-my
+{
+  background: rgb(46 64 70 / 79%) !important;
+  color: white !important;
+  border: none;
 }
